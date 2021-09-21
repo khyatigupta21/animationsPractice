@@ -1,0 +1,218 @@
+// Panda CSS Starts
+
+
+
+body{
+   background:url(https://git.io/JUW4t);
+   background-size: cover;
+   overflow: hidden;
+}
+
+#panda{
+   position:relative;
+   top:100px;
+   overflow: hidden;
+   background-repeat: no-repeat;
+   background-image: url('/animationsPractice/assets/img/Panda.png') ;
+   width:250px;
+   height:340px;
+   animation:walking_animation 0s steps(12) infinite,move_forward 8s linear infinite;	
+}
+
+@keyframes walking_animation{
+   	0%{background-position:0px;}
+		100%{background-position:3000px;}
+}
+@keyframes move_forward
+	{
+		0%{transform:translateX(-100px);}
+		100%{transform:translateX(1366px);}
+	}
+
+#street
+{
+   position:relative;
+   top:400px;
+   border-bottom:5px groove green;
+}
+
+// body
+// 	{
+// 		background: url(https://git.io/JUW4t);
+// 		background-size: cover;
+// 		overflow: hidden;
+// 	}
+
+// #panda
+// 	{
+// 		position:relative;
+// 		top:400px;
+// 		background: url(https://git.io/JUW4L); 
+// 		width:250px;
+// 		height:330px;		
+// 		animation:walking_animation 1s steps(12) infinite,move_forward 8s linear infinite;	
+// 	}
+
+// @keyframes walking_animation
+// 	{
+// 		0%{background-position:0px;}
+// 		100%{background-position:3000px;}
+// 	}
+
+// @keyframes move_forward
+// 	{
+// 		0%{transform:translateX(-200px);}
+// 		100%{transform:translateX(1466px);}
+// 	}
+
+// #street
+// 	{
+// 		position:relative;
+// 		top:400px;
+// 		border-bottom:5px groove green;
+// 	}
+
+// Panda CSS Ends
+
+
+// Rectangle CSS Starts
+
+
+body{
+   background-color: grey;
+}
+.rect{
+   width:150px;
+   height:150px;
+   background-color: #fff;
+   position: relative;
+   animation:rotate-rect 5s infinite;
+}
+@keyframes rotate-rect {
+   0%{
+      background-color: #fff; left:0; top:0;
+   }
+   25%{
+      background-color: pink; left:600px; top:0;
+   }
+   50%{
+      background-color: aqua; left:600px; top:600px;
+   }
+   75%{
+      background-color: chartreuse; left:0; top:600px;
+   }
+   100%{
+      background-color: #fff; left:0; top:0;
+   }
+}
+
+// Rectangle CSS Ends
+
+
+
+// BharatPe CSS Starts
+
+body{
+   background-color:black;
+   background-size: cover;
+   overflow:hidden;
+}
+.main-container{
+   display: flex;
+   justify-content: center;
+   position:relative;
+   width:100vw;
+   height:100vh;
+}
+.gard{
+   position:fixed;
+   opacity: 0.2;
+   max-width: 95vw;
+   top:1%;
+   left:20%;
+}
+.content{
+   position:relative;
+   top:25%;
+   left:5%;
+}
+.logo{
+   height:100px;
+   width:250px;
+}
+.content-list{
+   width:980px;
+   font-size: 100px;
+   color:#e0e0e0;
+}
+.scrolling-text{
+   position: relative;
+   height:110px;
+   overflow: hidden;
+}
+
+.scrolling-text span{
+   display: block;
+   height:110px;
+   overflow: hidden;
+
+}
+
+.scrolling-text .s1{
+   position:relative; 
+   color:green;
+   animation:animate 6s ease-in-out infinite ;
+   animation-delay: .9s;
+}
+
+.scrolling-text .s2{
+   position:relative; 
+   color:lightblue;
+   animation:animate 6s ease-in-out infinite;
+   animation-delay: .9s ;
+}
+.scrolling-text .s3{
+   position:relative; 
+   color:plum;
+
+   animation:animate 6s ease-in-out infinite ;
+   animation-delay: .9s;
+}
+.scrolling-text .s4{
+   position:relative;
+   color:orange; 
+
+   animation:animate 6s ease-in-out infinite ;
+   animation-delay: .9s ;
+}
+.scrolling-text .s5{
+   position:relative; 
+   color:hotpink;
+
+   animation:animate 6s ease-in-out infinite;
+   animation-delay: .9s ;
+}
+
+@keyframes animate{
+   0%{
+      bottom:0px;
+   }  
+   30%{
+      bottom:110px;
+   }
+   40%{
+      bottom:220px;
+   }
+   55%{
+      bottom:330px;
+   }
+   70%{
+      bottom:440px;
+   }
+   100%{
+      bottom:550px;
+
+   }
+}
+
+//BharatPe CSS Ends
