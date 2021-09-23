@@ -5,26 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
+    />
     <title>BharatPe</title>
   </head>
   <body>
-    <div class="main-container">
-      <img src="assets/img/grad.png" class="gard" />
-      <div class="content">
-        <div class="logo">
-          <img src="./assets/img/logo.svg" />
-        </div>
-        <h2 class="content-list">
-          Building next gen
-          <div class="scrolling-text">
-            <span class="s1">lending.</span>
-            <span class="s2">payments.</span>
-            <span class="s3">loyalty.</span>
-            <span class="s4">fintech.</span>
-            <span class="s5">banking.</span>
-          </div>
-        </h2>
-      </div>
+    <div class="loader-wrapper" id="loader">
+      <img src="./assets/img/loader.gif" />
     </div>
+    <div class="main-container" id="main-container">
+      <section class="section-item" id="section1">
+        <img src="assets/img/grad.png" class="gard" />
+        <div class="content">
+          <div class="logo">
+            <img class="img-logo" src="./assets/img/logo.svg" />
+          </div>
+          <h2 class="content-list">
+            Building next gen
+            <div class="scrolling-text">
+              <span class="s1">lending.</span>
+              <span class="s2">payments.</span>
+              <span class="s3">loyalty.</span>
+              <span class="s4">fintech.</span>
+              <span class="s5">banking.</span>
+            </div>
+          </h2>
+          <div class="arrow bounce">
+            <img class="arrow-img" alt="" src="assets/img/down-arrow.png" />
+          </div>
+        </div>
+      </section>
+      <section class="section-item" id="section2">
+        <div class="swiper-container">
+          <h2 class="employee-benefits" id="employee-benefits">
+            What's in it for you?
+          </h2>
+          <img class="logo-wrapper" src="./assets/img/logo-half.png" />
+          <div class="swiper-wrapper">
+            <div class="swiper-slide active">
+              <div class="slider-content">
+                <h3 class="light-blue">Compensation way above market</h3>
+                <div class="card_image">
+                  <img src="./assets/img/money-opt.gif" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("main-container").style.display = "block";
+      }, 1000); // 1 seconds
+    </script>
   </body>
 </html>

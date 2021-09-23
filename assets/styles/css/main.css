@@ -1,49 +1,32 @@
 body {
-  background-color: grey;
-}
-
-.rect {
-  width: 150px;
-  height: 150px;
-  background-color: #fff;
-  position: relative;
-  animation: rotate-rect 5s infinite;
-}
-
-@keyframes rotate-rect {
-  0% {
-    background-color: #fff;
-    left: 0;
-    top: 0;
-  }
-  25% {
-    background-color: pink;
-    left: 600px;
-    top: 0;
-  }
-  50% {
-    background-color: aqua;
-    left: 600px;
-    top: 600px;
-  }
-  75% {
-    background-color: chartreuse;
-    left: 0;
-    top: 600px;
-  }
-  100% {
-    background-color: #fff;
-    left: 0;
-    top: 0;
-  }
-}
-body {
   background-color: black;
   background-size: cover;
   overflow: hidden;
+  font-family: "Gilroy", sans-serif;
+}
+
+.loader-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  align-items: center;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.loader-wrapper img {
+  height: 120px;
 }
 
 .main-container {
+  display: none;
+}
+
+.section-item {
   display: flex;
   justify-content: center;
   position: relative;
@@ -55,19 +38,22 @@ body {
   position: fixed;
   opacity: 0.2;
   max-width: 95vw;
-  top: 1%;
-  left: 20%;
+  top: -5.8%;
+  left: 15%;
+  animation: backgroundTransition 5s;
 }
 
 .content {
   position: relative;
-  top: 25%;
-  left: 5%;
+  top: 20.5%;
+  left: -72px;
+  width: 852px;
+  height: 253px;
 }
 
-.logo {
-  height: 100px;
-  width: 250px;
+.img-logo {
+  height: 90px;
+  animation: transitionIn 5s;
 }
 
 .content-list {
@@ -84,64 +70,143 @@ body {
 
 .scrolling-text span {
   display: block;
-  height: 110px;
+  height: 120px;
   overflow: hidden;
+  animation: animate 6s ease-in-out infinite;
+  animation-delay: 2s;
+  position: relative;
 }
 
 .scrolling-text .s1 {
-  position: relative;
   color: green;
-  animation: animate 6s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
 .scrolling-text .s2 {
-  position: relative;
   color: lightblue;
-  animation: animate 6s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
 .scrolling-text .s3 {
-  position: relative;
   color: plum;
-  animation: animate 6s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
 .scrolling-text .s4 {
-  position: relative;
   color: orange;
-  animation: animate 6s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
 .scrolling-text .s5 {
-  position: relative;
   color: hotpink;
-  animation: animate 6s ease-in-out infinite;
-  animation-delay: 0.5s;
 }
 
+.arrow {
+  position: relative;
+  bottom: -30%;
+  left: 60%;
+}
+
+.bounce {
+  animation: bounce 3s infinite;
+}
+
+.arrow-img {
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
 @keyframes animate {
   0% {
     bottom: 0px;
   }
-  30% {
-    bottom: 110px;
+  20% {
+    bottom: 120px;
   }
   40% {
-    bottom: 220px;
+    bottom: 240px;
   }
-  55% {
-    bottom: 330px;
+  65% {
+    bottom: 360px;
   }
-  70% {
-    bottom: 440px;
+  80% {
+    bottom: 480px;
   }
   100% {
-    bottom: 550px;
+    bottom: 500px;
   }
+}
+@keyframes transitionIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes backgroundTransition {
+  0% {
+    transform: translate(-20%, 20%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.employee-benefits {
+  font-size: 100px;
+  letter-spacing: -0.02em;
+  color: #444;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  align-items: center;
+  z-index: 4;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0.2;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  margin-top: 187.8px;
 }
 
 /*# sourceMappingURL=main.css.map */
