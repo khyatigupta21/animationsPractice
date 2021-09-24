@@ -115,7 +115,6 @@
 body{
    background-color:black;
    background-size: cover;
-   overflow:hidden;
    font-family:'Gilroy', sans-serif;
 }
 .loader-wrapper{
@@ -224,7 +223,6 @@ body{
    width:40px;
 }
 
-
 @keyframes bounce{
    0%, 100%, 20%, 50%, 80%{
       transform: translateY(0);   
@@ -285,10 +283,11 @@ body{
    position: relative;
    width:100%;
    height:100%;
-   overflow: hidden;
+   // overflow: hidden;
    z-index: 1;
    margin:0 auto;
-   background-color: #fff;
+   text-align: center;
+   background-color: rgb(237, 240, 240);
 }
 .employee-benefits{
    font-size: 100px;
@@ -300,6 +299,24 @@ body{
    align-items: center;
    z-index:4;
 }
+.show-transition{
+   animation:compensationIn 5s ease-in-out;
+}
+
+@keyframes compensationIn{
+   0%{
+      transform:translateY(calc(577 * .5px))
+   }
+   100%{
+      transform: translateY(0);
+   
+   }
+}
+
+// section:nth-child(2) .show-transition{
+//    transform: translateY(calc(var(--yBlock-2) * .5px));
+// }
+
 .logo-wrapper{
    position: absolute;
    top:0;
@@ -319,15 +336,27 @@ body{
    height: 100%;
    width:100%;
    position:relative;
+   text-align: center;
+   font-size: 18px;
+   background: 0,0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .slider-content{
    display: flex;
    justify-content: center;
    width:85%;
-   margin-top:187.800px;
+   margin-top:20vh;
+   align-items: center;
 }
+.dark-blue{
+   color:#004c68;
+   margin:40px 0;
+   font-size: 40px;
 
+}
 
 
 

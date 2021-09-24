@@ -46,7 +46,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide active">
               <div class="slider-content">
-                <h3 class="light-blue">Compensation way above market</h3>
+                <h3 class="dark-blue">Compensation way above market</h3>
                 <div class="card_image">
                   <img src="./assets/img/money-opt.gif" />
                 </div>
@@ -61,6 +61,27 @@
         document.getElementById("loader").style.display = "none";
         document.getElementById("main-container").style.display = "block";
       }, 1000); // 1 seconds
+
+      // Remove the transition class
+      const square = document.querySelector(".employee-benefits");
+      square.classList.remove("show-transition");
+
+      // Create the observer, same as before:
+      const observer = new IntersectionObserver((entries) => {
+        console.log("scrollsfdsfdsfdsfdsfdsfsfdsfdsfing");
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            square.classList.add("show-transition");
+
+            return;
+          }
+
+          square.classList.remove("show-transition");
+        });
+      });
+
+      observer.observe(document.querySelector(".swiper-wrapper"));
     </script>
   </body>
 </html>
