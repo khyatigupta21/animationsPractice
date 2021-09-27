@@ -29,7 +29,16 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
+}
+
+.section-item2 {
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+  position: relative;
+  width: auto;
   height: 100vh;
 }
 
@@ -161,7 +170,8 @@ body {
 .swiper-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   z-index: 1;
   margin: 0 auto;
   text-align: center;
@@ -173,24 +183,12 @@ body {
   letter-spacing: -0.02em;
   color: #444;
   position: absolute;
-  top: 0;
+  top: 400px;
   width: 100vw;
   align-items: center;
   z-index: 4;
 }
 
-.show-transition {
-  animation: compensationIn 5s ease-in-out;
-}
-
-@keyframes compensationIn {
-  0% {
-    transform: translateY(calc(577 * .5px));
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .logo-wrapper {
   position: absolute;
   top: 0;
@@ -204,7 +202,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  box-sizing: content-box;
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -227,10 +225,73 @@ body {
   align-items: center;
 }
 
-.dark-blue {
+.compensation-heading {
   color: #004c68;
   margin: 40px 0;
   font-size: 40px;
+}
+
+.geeky-heading {
+  color: #fff;
+  font-size: 40px;
+}
+
+.geeky {
+  background-color: #1e1942;
+  width: 1257px;
+  display: none;
+}
+
+.is-selected {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.jobs-slider {
+  position: relative;
+  z-index: 10;
+  width: 85vw;
+  left: 50%;
+  top: -95px;
+  display: flex;
+  transform: translateX(-50%);
+}
+
+.slider-arrow {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 6px 26px 6px rgba(0, 0, 0, 0.25);
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 12;
+  top: 50%;
+  cursor: pointer;
+}
+
+.geeky {
+  display: none;
+}
+
+.lots {
+  display: none;
+}
+
+.prev {
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+.next {
+  right: 50px;
+  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=main.css.map */

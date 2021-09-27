@@ -37,21 +37,59 @@
           </div>
         </div>
       </section>
-      <section class="section-item" id="section2">
+      <section class="section-item2" id="section2">
         <div class="swiper-container">
-          <h2 class="employee-benefits" id="employee-benefits">
-            What's in it for you?
-          </h2>
-          <img class="logo-wrapper" src="./assets/img/logo-half.png" />
           <div class="swiper-wrapper">
-            <div class="swiper-slide active">
+            <h2 class="employee-benefits" id="employee-benefits">
+              What's in it for you?
+            </h2>
+            <img class="logo-wrapper" src="./assets/img/logo-half.png" />
+            <div class="swiper-slide active" id="s1">
               <div class="slider-content">
-                <h3 class="dark-blue">Compensation way above market</h3>
+                <h3 class="compensation-heading">
+                  Compensation way above market
+                </h3>
                 <div class="card_image">
                   <img src="./assets/img/money-opt.gif" />
                 </div>
               </div>
             </div>
+            <div class="swiper-slide geeky" id="s2">
+              <div class="slider-content">
+                <h3 class="geeky-heading">Geeky culture</h3>
+                <div class="card_image">
+                  <img src="./assets/img/job.gif" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide geeky" id="s3">
+              <div class="slider-content">
+                <h3 class="geeky-heading">Geeky cultureadsadasdad</h3>
+                <div class="card_image">
+                  <img src="./assets/img/job.gif" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jobs-slider">
+          <div class="slider-arrows">
+            <button class="slider-arrow prev prev-btn">
+              <span class="icon-font">
+                <img
+                  class="icon icon-arrow-left"
+                  src="./assets/img/arrow-left.svg"
+                />
+              </span>
+            </button>
+            <button class="slider-arrow next next-btn" onclick="next()">
+              <span class="icon-font">
+                <img
+                  class="icon icon-arrow-left"
+                  src="./assets/img/arrow-right.svg"
+                />
+              </span>
+            </button>
           </div>
         </div>
       </section>
@@ -63,7 +101,7 @@
       }, 1000); // 1 seconds
 
       // Remove the transition class
-      const square = document.querySelector(".employee-benefits");
+      /*  const square = document.querySelector(".employee-benefits");
       square.classList.remove("show-transition");
 
       // Create the observer, same as before:
@@ -81,7 +119,45 @@
         });
       });
 
-      observer.observe(document.querySelector(".swiper-wrapper"));
+      observer.observe(document.querySelector(".swiper-wrapper"));*/
+
+      const $ = document.querySelector.bind(document);
+      const empBenefits = $(".employee-benefits");
+
+      function transformText() {
+        const scroll = window.scrollY;
+
+        // console.log({AmountScrolled: scroll});
+
+        empBenefits.style.transform = `translate3d(0,${scroll * -0.5}px,0)`;
+      }
+
+      window.addEventListener("scroll", transformText);
+
+      /*Javascript for sliding the contents in div*/
+
+      var showing = [1, 0, 0];
+      var slides = ["s1", "s2", "s3"];
+      function next() {
+        var sElems = [];
+        for (var i = 0; i < slides.length; i++) {
+          sElems.push(document.getElementById(slides[i]));
+        }
+        for (var i = 0; i < showing.length; i++) {
+          if (showing[i] == 1) {
+            sElems[i].style.display = "none";
+            showing[i] = 0;
+            if (i == showing.length - 1) {
+              sElems[0].style.display = "flex";
+              showing[0] = 1;
+            } else {
+              sElems[i + 1].style.display = "flex";
+              showing[i + 1] = 1;
+            }
+            break;
+          }
+        }
+      }
     </script>
   </body>
 </html>
