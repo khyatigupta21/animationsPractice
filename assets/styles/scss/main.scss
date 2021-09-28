@@ -116,6 +116,7 @@ body{
    background-color:black;
    background-size: cover;
    font-family:'Gilroy', sans-serif;
+   margin:0;
 }
 .loader-wrapper{
    // position: fixed;
@@ -348,7 +349,11 @@ body{
    display: flex;
    justify-content: center;
    align-items: center;
+//   transform: translate3d(-100%, 0, 0);
+// 	transition: 1s;
+
 }
+
 
 .slider-content{
    display: flex;
@@ -369,8 +374,13 @@ body{
 }
 .geeky{
    background-color: rgb(30, 25, 66);
-   width: 1257px;
    display: none;
+   transform: translateX(0);
+	transition: 1s;
+}
+.active{
+   transform: translateX(0);
+	transition: 1s;
 }
 .is-selected{
    display: flex;
@@ -417,7 +427,31 @@ body{
    transform:translateY(-50%)
 }
 
+.toggle-right{
+  animation:slider-left 1s ease-in-out;
+}
 
+.toggle-left{
+  animation:slider-right 1s ease in ease-in-out;
+}
+@keyframes slider-left{
+   0%{
+      transform: translateX(0);
+   }
+   100%{
+      transform: translateX(-100%);
+   
+   }
+}
+@keyframes slider-right{
+   0%{
+      transform: translateX(-100%);
+   }
+   100%{
+      transform: translateX(0);
+   
+   }
+}
 //Second section ends
 
 

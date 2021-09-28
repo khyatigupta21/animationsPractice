@@ -74,7 +74,7 @@
         </div>
         <div class="jobs-slider">
           <div class="slider-arrows">
-            <button class="slider-arrow prev prev-btn">
+            <button class="slider-arrow prev prev-btn" onclick="previous()">
               <span class="icon-font">
                 <img
                   class="icon icon-arrow-left"
@@ -149,10 +149,36 @@
             showing[i] = 0;
             if (i == showing.length - 1) {
               sElems[0].style.display = "flex";
+              sElems[0].classList.add("toggle-right");
               showing[0] = 1;
             } else {
               sElems[i + 1].style.display = "flex";
+              sElems[i + 1].classList.add("toggle-right");
               showing[i + 1] = 1;
+            }
+            break;
+          }
+        }
+      }
+
+      function previous() {
+        var sElems = [];
+        for (var i = 0; i < slides.length; i++) {
+          sElems.push(document.getElementById(slides[i]));
+        }
+        for (var i = showing.length - 1; i >= 0; i--) {
+          if (showing[i] == 1) {
+            sElems[i].style.display = "none";
+            showing[i] = 0;
+            if (i == 0) {
+              sElems[showing.length - 1].style.display = "flex";
+              sElems[showing.length - 1].classList.add("toggle-left");
+
+              showing[showing.length - 1] = 1;
+            } else {
+              sElems[i - 1].style.display = "flex";
+              sElems[i - 1].classList.add("toggle-left");
+              showing[i - 1] = 1;
             }
             break;
           }

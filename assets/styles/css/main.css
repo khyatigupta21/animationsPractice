@@ -2,6 +2,7 @@ body {
   background-color: black;
   background-size: cover;
   font-family: "Gilroy", sans-serif;
+  margin: 0;
 }
 
 .loader-wrapper {
@@ -238,8 +239,14 @@ body {
 
 .geeky {
   background-color: #1e1942;
-  width: 1257px;
   display: none;
+  transform: translateX(0);
+  transition: 1s;
+}
+
+.active {
+  transform: translateX(0);
+  transition: 1s;
 }
 
 .is-selected {
@@ -292,6 +299,31 @@ body {
 .next {
   right: 50px;
   transform: translateY(-50%);
+}
+
+.toggle-right {
+  animation: slider-left 1s ease-in-out;
+}
+
+.toggle-left {
+  animation: slider-right 1s ease in ease-in-out;
+}
+
+@keyframes slider-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slider-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
